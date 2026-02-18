@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onkwehonwe · Mohawk Turtle Clan · Kahnawà:ke</title>
+<meta name="description" content="Kanien'kehá:ka — Turtle Clan — Haudenosaunee Confederacy. Mohawk Nation, Kahnawà:ke, Montreal. Original People of Turtle Island.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   ROOT & RESET
+═══════════════════════════════════════ */
+:root {
+  --earth:       #1a0e05;
+  --bark:        #2d1a0a;
+  --deep-bark:   #3d2010;
+  --rust:        #8B3A0F;
+  --copper:      #C4622D;
+  --amber:       #E8931A;
+  --gold:        #F2C84B;
+  --cream:       #F5EDD6;
+  --soft-cream:  #EDE4C8;
+  --turquoise:   #2A7A6E;
+  --wampum:      #6B4C8A;
+  --white-wampum:#E8DFF5;
+  --nav-h:       70px;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--earth);
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ═══════════════════════════════════════
+   WAMPUM UTILITY BAR
+═══════════════════════════════════════ */
+.wampum-bar {
+  height: 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--wampum)      0px, var(--wampum)      22px,
+    var(--white-wampum)22px,var(--white-wampum) 44px,
+    var(--copper)      44px,var(--copper)       66px,
+    var(--gold)        66px,var(--gold)          88px
+  );
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+}
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 10px; left: 0; right: 0;
+  height: var(--nav-h);
+  background: rgba(26,14,5,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(242,200,75,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 999;
+}
+
+.nav-logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, var(--gold), var(--amber));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(245,237,214,0.55);
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--gold);
+  transition: 0.3s;
+}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  padding-top: calc(var(--nav-h) + 10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Atmospheric background layers */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 10%, rgba(196,98,45,0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 15% 80%, rgba(107,76,138,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 85% 80%, rgba(42,122,110,0.10) 0%, transparent 60%);
+}
+
+/* Geometric grid texture */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image:
+    repeating-linear-gradient(0deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 70px),
+    repeating-linear-gradient(90deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 70px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 900px;
+  animation: fadeUp 1.4s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(40px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* Main hero logo */
+.hero-emblem {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 2.5rem;
+  filter: drop-shadow(0 0 50px rgba(232,147,26,0.5));
+  animation: emblemFloat 6s ease-in-out infinite, fadeUp 1.6s ease both;
+}
+
+@keyframes emblemFloat {
+  0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 40px rgba(232,147,26,0.5)); }
+  50%       { transform: translateY(-10px); filter: drop-shadow(0 0 70px rgba(232,147,26,0.7)); }
+}
+
+.hero-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.6em;
+  color: var(--amber);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  animation: fadeUp 1.4s 0.2s ease both;
+}
+
+.hero-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1.0;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--amber) 50%, var(--copper) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  animation: fadeUp 1.4s 0.3s ease both;
+}
+
+.hero-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  letter-spacing: 0.4em;
+  color: var(--amber);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  animation: fadeUp 1.4s 0.4s ease both;
+}
+
+.hero-divider {
+  width: 240px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 1.5rem auto;
+  animation: fadeUp 1.4s 0.5s ease both;
+}
+
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: rgba(245,237,214,0.6);
+  letter-spacing: 0.15em;
+  line-height: 1.6;
+  animation: fadeUp 1.4s 0.6s ease both;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  padding: 0.9rem 2.5rem;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+  animation: fadeUp 1.4s 0.8s ease both;
+}
+
+.hero-cta:hover {
+  background: var(--gold);
+  color: var(--earth);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s ease-in-out infinite;
+  color: rgba(242,200,75,0.3);
+  font-size: 1.5rem;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ═══════════════════════════════════════
+   SECTION SHARED
+═══════════════════════════════════════ */
+section {
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.section-eyebrow::before,
+.section-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(242,200,75,0.3));
+}
+
+.section-eyebrow::after {
+  background: linear-gradient(270deg, transparent, rgba(242,200,75,0.3));
+}
+
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: var(--amber);
+  white-space: nowrap;
+}
+
+.section-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--cream);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.section-body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.85;
+  color: rgba(245,237,214,0.7);
+  max-width: 680px;
+}
+
+/* ═══════════════════════════════════════
+   ABOUT / STORY SECTION
+═══════════════════════════════════════ */
+#about {
+  background: linear-gradient(180deg, var(--earth) 0%, var(--bark) 100%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-visual svg {
+  filter: drop-shadow(0 20px 60px rgba(232,147,26,0.3));
+}
+
+.about-visual::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse, rgba(196,98,45,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.about-text blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  color: var(--gold);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--copper);
+}
+
+.about-text p {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.9;
+  color: rgba(245,237,214,0.65);
+  margin-bottom: 1.25rem;
+}
+
+.stat-row {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(242,200,75,0.12);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.stat-num {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.8rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+/* ═══════════════════════════════════════
+   WAMPUM DIVIDER
+═══════════════════════════════════════ */
+.wampum-divider {
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wampum-divider svg {
+  display: block;
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════
+   NATIONS / CONFEDERACY SECTION
+═══════════════════════════════════════ */
+#nations {
+  background: var(--bark);
+}
+
+.nations-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.nations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.nation-card {
+  background: var(--deep-bark);
+  border: 1px solid rgba(242,200,75,0.1);
+  padding: 2rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.nation-card:hover {
+  border-color: rgba(242,200,75,0.4);
+  transform: translateY(-4px);
+}
+
+.nation-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--rust), var(--amber), var(--rust));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nation-card:hover::before { opacity: 1; }
+
+.nation-card.featured {
+  border-color: rgba(242,200,75,0.3);
+  background: linear-gradient(135deg, var(--deep-bark), #4a2515);
+}
+
+.nation-card.featured::before { opacity: 0.6; }
+
+.nation-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.nation-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.nation-mohawk {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--amber);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.nation-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(245,237,214,0.5);
+}
+
+.nation-badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--gold);
+  font-family: 'Cinzel', serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ═══════════════════════════════════════
+   CULTURE SECTION
+═══════════════════════════════════════ */
+#culture {
+  background: linear-gradient(180deg, var(--bark) 0%, var(--earth) 100%);
+}
+
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.culture-item {
+  padding: 2.5rem;
+  border: 1px solid rgba(242,200,75,0.1);
+  background: rgba(45,26,10,0.4);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.culture-item:hover { border-color: rgba(242,200,75,0.3); }
+
+.culture-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(0deg, rgba(45,26,10,0.4), transparent);
+  pointer-events: none;
+}
+
+.culture-num {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 3rem;
+  color: rgba(242,200,75,0.08);
+  position: absolute;
+  top: 1rem; right: 1.5rem;
+  line-height: 1;
+}
+
+.culture-icon {
+  margin-bottom: 1rem;
+}
+
+.culture-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.culture-text {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.8;
+  color: rgba(245,237,214,0.6);
+}
+
+/* ═══════════════════════════════════════
+   BRAND / ASSETS SECTION
+═══════════════════════════════════════ */
+#brand {
+  background: var(--earth);
+}
+
+.brand-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.brand-card {
+  background: var(--bark);
+  border: 1px solid rgba(242,200,75,0.12);
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.brand-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(242,200,75,0.4);
+}
+
+.brand-preview {
+  background: var(--earth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  min-height: 200px;
+  border-bottom: 1px solid rgba(242,200,75,0.08);
+}
+
+.brand-info {
+  padding: 1.5rem;
+}
+
+.brand-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--cream);
+  margin-bottom: 0.4rem;
+}
+
+.brand-desc {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: rgba(245,237,214,0.4);
+}
+
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(242,200,75,0.3);
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.download-link:hover {
+  background: var(--gold);
+  color: var(--earth);
+}
+
+/* ═══════════════════════════════════════
+   CONTACT / CONNECT
+═══════════════════════════════════════ */
+#connect {
+  background: var(--bark);
+  text-align: center;
+}
+
+.connect-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.connect-form {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.connect-form input,
+.connect-form textarea {
+  background: var(--deep-bark);
+  border: 1px solid rgba(242,200,75,0.15);
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  padding: 0.9rem 1.2rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.3s;
+  resize: none;
+}
+
+.connect-form input::placeholder,
+.connect-form textarea::placeholder {
+  color: rgba(245,237,214,0.3);
+  font-style: italic;
+}
+
+.connect-form input:focus,
+.connect-form textarea:focus {
+  border-color: rgba(242,200,75,0.5);
+}
+
+.connect-form textarea { min-height: 130px; }
+
+.submit-btn {
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, var(--rust), var(--copper));
+  border: none;
+  color: var(--cream);
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(242,200,75,0.25);
+  color: rgba(242,200,75,0.6);
+  text-decoration: none;
+  transition: border-color 0.3s, color 0.3s, transform 0.3s;
+  font-size: 1.1rem;
+}
+
+.social-link:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-3px);
+}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer {
+  background: var(--earth);
+  border-top: 1px solid rgba(242,200,75,0.08);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, var(--gold), var(--amber));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.footer-tagline {
+  font-style: italic;
+  color: rgba(245,237,214,0.4);
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.footer-nav a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(245,237,214,0.3);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover { color: var(--gold); }
+
+.footer-copy {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(245,237,214,0.15);
+}
+
+/* ═══════════════════════════════════════
+   MOBILE
+═══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 80px; left: 0; right: 0;
+    background: rgba(26,14,5,0.98);
+    padding: 2rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid rgba(242,200,75,0.1);
+  }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-visual { order: -1; }
+  .nations-intro { grid-template-columns: 1fr; }
+  .nations-grid { grid-template-columns: 1fr 1fr; }
+  .culture-grid { grid-template-columns: 1fr; }
+  .brand-showcase { grid-template-columns: 1fr; }
+  .stat-row { flex-wrap: wrap; }
+  .footer-nav { flex-wrap: wrap; gap: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .nations-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════
+   SCROLL REVEAL (JS-powered)
+═══════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- ── Wampum top bar ── -->
+<div class="wampum-bar"></div>
+
+<!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+<nav>
+  <a href="#hero" class="nav-logo">ONKWEHONWE</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#nations">Confederacy</a></li>
+    <li><a href="#culture">Culture</a></li>
+    <li><a href="#brand">Brand Kit</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+
+  <div class="hero-content">
+    <!-- Turtle emblem SVG inline -->
+    <div class="hero-emblem">
+      <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="tg" cx="50%" cy="45%" r="50%">
+            <stop offset="0%" stop-color="#F2C84B"/>
+            <stop offset="50%" stop-color="#C4622D"/>
+            <stop offset="100%" stop-color="#8B3A0F"/>
+          </radialGradient>
+          <radialGradient id="sg" cx="50%" cy="40%" r="55%">
+            <stop offset="0%" stop-color="#E8931A"/>
+            <stop offset="100%" stop-color="#5C2206"/>
+          </radialGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <circle cx="150" cy="150" r="145" fill="none" stroke="#F2C84B" stroke-width="1" opacity="0.35"/>
+        <circle cx="150" cy="150" r="138" fill="none" stroke="#E8931A" stroke-width="1.5" opacity="0.5"/>
+        <g filter="url(#glow)">
+          <circle cx="150" cy="8"   r="4" fill="#6B4C8A" opacity="0.9"/>
+          <circle cx="222" cy="28"  r="4" fill="#E8DFF5" opacity="0.9"/>
+          <circle cx="278" cy="82"  r="4" fill="#6B4C8A" opacity="0.9"/>
+          <circle cx="295" cy="150" r="4" fill="#E8DFF5" opacity="0.9"/>
+          <circle cx="278" cy="218" r="4" fill="#6B4C8A" opacity="0.9"/>
+          <circle cx="222" cy="272" r="4" fill="#E8DFF5" opacity="0.9"/>
+          <circle cx="150" cy="292" r="4" fill="#6B4C8A" opacity="0.9"/>
+          <circle cx="78"  cy="272" r="4" fill="#E8DFF5" opacity="0.9"/>
+          <circle cx="22"  cy="218" r="4" fill="#6B4C8A" opacity="0.9"/>
+          <circle cx="5"   cy="150" r="4" fill="#E8DFF5" opacity="0.9"/>
+          <circle cx="22"  cy="82"  r="4" fill="#6B4C8A" opacity="0.9"/>
+          <circle cx="78"  cy="28"  r="4" fill="#E8DFF5" opacity="0.9"/>
+        </g>
+        <ellipse cx="150" cy="148" rx="75" ry="65" fill="url(#sg)" stroke="#F2C84B" stroke-width="1.5"/>
+        <polygon points="150,118 170,130 170,154 150,166 130,154 130,130" fill="none" stroke="#F2C84B" stroke-width="1.2"/>
+        <polygon points="150,104 162,111 162,118 150,118 138,111" fill="none" stroke="#E8931A" stroke-width="1" opacity="0.7"/>
+        <polygon points="170,130 183,122 189,133 183,145 170,154 170,130" fill="none" stroke="#E8931A" stroke-width="1" opacity="0.7"/>
+        <polygon points="170,154 183,145 189,157 183,168 170,166" fill="none" stroke="#E8931A" stroke-width="1" opacity="0.7"/>
+        <polygon points="150,166 162,173 150,183 138,173 130,166" fill="none" stroke="#E8931A" stroke-width="1" opacity="0.7"/>
+        <polygon points="130,154 117,168 111,157 117,145 130,130 130,154" fill="none" stroke="#E8931A" stroke-width="1" opacity="0.7"/>
+        <polygon points="130,130 117,145 111,133 117,122 130,104 130,130" fill="none" stroke="#E8931A" stroke-width="1" opacity="0.7"/>
+        <ellipse cx="150" cy="90" rx="22" ry="18" fill="url(#tg)" stroke="#F2C84B" stroke-width="1.5"/>
+        <circle cx="143" cy="87" r="3" fill="#1a0e05"/>
+        <circle cx="157" cy="87" r="3" fill="#1a0e05"/>
+        <circle cx="144" cy="86" r="1" fill="#F2C84B"/>
+        <circle cx="158" cy="86" r="1" fill="#F2C84B"/>
+        <ellipse cx="88"  cy="138" rx="18" ry="10" fill="url(#tg)" stroke="#F2C84B" stroke-width="1.2" transform="rotate(-30 88 138)"/>
+        <ellipse cx="212" cy="138" rx="18" ry="10" fill="url(#tg)" stroke="#F2C84B" stroke-width="1.2" transform="rotate(30 212 138)"/>
+        <ellipse cx="95"  cy="180" rx="16" ry="9"  fill="url(#tg)" stroke="#F2C84B" stroke-width="1.2" transform="rotate(25 95 180)"/>
+        <ellipse cx="205" cy="180" rx="16" ry="9"  fill="url(#tg)" stroke="#F2C84B" stroke-width="1.2" transform="rotate(-25 205 180)"/>
+        <ellipse cx="150" cy="210" rx="8"  ry="12" fill="url(#tg)" stroke="#F2C84B" stroke-width="1"/>
+        <path d="M150,72 C150,72 146,55 148,35 C149,25 151,25 152,35 C154,55 150,72 150,72Z" fill="#C4622D" stroke="#F2C84B" stroke-width="0.8"/>
+        <path d="M145,74 C145,74 138,60 137,42 C136,33 139,32 141,41 C143,59 145,74 145,74Z" fill="#8B3A0F" stroke="#E8931A" stroke-width="0.8"/>
+        <path d="M155,74 C155,74 162,60 163,42 C164,33 161,32 159,41 C157,59 155,74 155,74Z" fill="#8B3A0F" stroke="#E8931A" stroke-width="0.8"/>
+        <path d="M140,76 C140,76 130,65 127,50 C125,42 128,41 130,49 C133,63 140,76 140,76Z" fill="#2A7A6E" stroke="#F2C84B" stroke-width="0.8"/>
+        <path d="M160,76 C160,76 170,65 173,50 C175,42 172,41 170,49 C167,63 160,76 160,76Z" fill="#2A7A6E" stroke="#F2C84B" stroke-width="0.8"/>
+      </svg>
+    </div>
+
+    <p class="hero-eyebrow">Kanien'kehá:ka · Turtle Clan · Kahnawà:ke</p>
+    <h1 class="hero-title">ONKWEHONWE</h1>
+    <p class="hero-subtitle">Original People of Turtle Island</p>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">Mohawk Nation · Haudenosaunee Confederacy<br>Kahnawà:ke, Montreal · Sovereign Since Time Immemorial</p>
+    <a href="#about" class="hero-cta">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      Explore Our Story
+    </a>
+  </div>
+
+  <div class="scroll-indicator">↓</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     ABOUT / STORY
+══════════════════════════════════════ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+
+      <div class="about-visual reveal">
+        <svg viewBox="0 0 300 340" width="300" xmlns="http://www.w3.org/2000/svg">
+          <!-- Decorative geometric frame -->
+          <rect x="10" y="10" width="280" height="320" fill="none" stroke="#F2C84B" stroke-width="1" opacity="0.2"/>
+          <path d="M10,10 L40,10 M10,10 L10,40" stroke="#F2C84B" stroke-width="1.5" opacity="0.5"/>
+          <path d="M290,10 L260,10 M290,10 L290,40" stroke="#F2C84B" stroke-width="1.5" opacity="0.5"/>
+          <path d="M10,330 L40,330 M10,330 L10,300" stroke="#F2C84B" stroke-width="1.5" opacity="0.5"/>
+          <path d="M290,330 L260,330 M290,330 L290,300" stroke="#F2C84B" stroke-width="1.5" opacity="0.5"/>
+          <!-- Turtle Island concept - layered circles -->
+          <circle cx="150" cy="160" r="120" fill="none" stroke="#E8931A" stroke-width="0.8" stroke-dasharray="4 8" opacity="0.3"/>
+          <circle cx="150" cy="160" r="90" fill="rgba(61,32,16,0.6)" stroke="#F2C84B" stroke-width="1.2"/>
+          <!-- Shell segments - styled as map -->
+          <polygon points="150,90 195,115 195,165 150,190 105,165 105,115" fill="rgba(196,98,45,0.25)" stroke="#F2C84B" stroke-width="1.2"/>
+          <polygon points="150,75 168,85 168,90 150,90 132,85" fill="rgba(232,147,26,0.2)" stroke="#E8931A" stroke-width="0.8" opacity="0.7"/>
+          <polygon points="195,115 213,105 218,118 213,130 195,165 195,115" fill="rgba(232,147,26,0.15)" stroke="#E8931A" stroke-width="0.8" opacity="0.7"/>
+          <polygon points="195,165 213,130 218,145 213,158 195,190" fill="rgba(232,147,26,0.15)" stroke="#E8931A" stroke-width="0.8" opacity="0.7"/>
+          <polygon points="150,190 168,200 150,212 132,200 105,190" fill="rgba(232,147,26,0.15)" stroke="#E8931A" stroke-width="0.8" opacity="0.7"/>
+          <polygon points="105,165 87,158 82,145 87,130 105,115 105,165" fill="rgba(232,147,26,0.15)" stroke="#E8931A" stroke-width="0.8" opacity="0.7"/>
+          <polygon points="105,115 87,130 82,118 87,105 105,75 105,115" fill="rgba(232,147,26,0.15)" stroke="#E8931A" stroke-width="0.8" opacity="0.7"/>
+          <!-- Head / feathers -->
+          <ellipse cx="150" cy="62" rx="18" ry="14" fill="#C4622D" stroke="#F2C84B" stroke-width="1.2"/>
+          <path d="M150,48 C150,48 147,36 148,24 C148.5,18 151.5,18 152,24 C153,36 150,48 150,48Z" fill="#C4622D" stroke="#F2C84B"/>
+          <path d="M145,50 C145,50 139,40 138,28 C137.5,22 140,21 141.5,27 C143,39 145,50 145,50Z" fill="#8B3A0F" stroke="#E8931A"/>
+          <path d="M155,50 C155,50 161,40 162,28 C162.5,22 160,21 158.5,27 C157,39 155,50 155,50Z" fill="#8B3A0F" stroke="#E8931A"/>
+          <path d="M140,52 C140,52 131,43 129,33 C128,27 131,26 133,32 C135,42 140,52 140,52Z" fill="#2A7A6E" stroke="#F2C84B"/>
+          <path d="M160,52 C160,52 169,43 171,33 C172,27 169,26 167,32 C165,42 160,52 160,52Z" fill="#2A7A6E" stroke="#F2C84B"/>
+          <!-- Legs -->
+          <ellipse cx="68" cy="142" rx="15" ry="8" fill="#C4622D" stroke="#F2C84B" stroke-width="1" transform="rotate(-30 68 142)"/>
+          <ellipse cx="232" cy="142" rx="15" ry="8" fill="#C4622D" stroke="#F2C84B" stroke-width="1" transform="rotate(30 232 142)"/>
+          <ellipse cx="73" cy="177" rx="13" ry="7" fill="#C4622D" stroke="#F2C84B" stroke-width="1" transform="rotate(25 73 177)"/>
+          <ellipse cx="227" cy="177" rx="13" ry="7" fill="#C4622D" stroke="#F2C84B" stroke-width="1" transform="rotate(-25 227 177)"/>
+          <ellipse cx="150" cy="204" rx="6" ry="10" fill="#C4622D" stroke="#F2C84B" stroke-width="1"/>
+          <!-- Wampum bead strip -->
+          <g opacity="0.8">
+            <circle cx="80"  cy="285" r="5" fill="#6B4C8A"/>
+            <circle cx="100" cy="285" r="5" fill="#E8DFF5"/>
+            <circle cx="120" cy="285" r="5" fill="#6B4C8A"/>
+            <circle cx="140" cy="285" r="5" fill="#E8DFF5"/>
+            <circle cx="160" cy="285" r="5" fill="#6B4C8A"/>
+            <circle cx="180" cy="285" r="5" fill="#E8DFF5"/>
+            <circle cx="200" cy="285" r="5" fill="#6B4C8A"/>
+            <circle cx="220" cy="285" r="5" fill="#E8DFF5"/>
+          </g>
+          <text x="150" y="315" text-anchor="middle" font-family="Georgia,serif" font-size="8" letter-spacing="4" fill="#F2C84B">TURTLE ISLAND</text>
+        </svg>
+      </div>
+
+      <div class="about-text reveal reveal-delay-2">
+        <div class="section-eyebrow">
+          <span class="section-label">Our Story</span>
+        </div>
+        <blockquote>"We are the original people — Onkwehonwe — and Turtle Island belongs to all of us."</blockquote>
+        <p>The Kanien'kehá:ka — People of the Flint — are one of the original nations of the Haudenosaunee Confederacy, a sophisticated democratic union established centuries before European contact. We are the Keepers of the Eastern Door.</p>
+        <p>The Turtle Clan is one of three Mohawk clans, alongside Wolf and Bear. The turtle represents patience, wisdom, and endurance — carrying the world on its back. Clan identity passes through the mother, connecting every generation to the earth and to one another.</p>
+        <p>Kahnawà:ke, south of Montreal, is home to a thriving Mohawk community that has maintained its sovereignty, language, and traditions while also building bridges to the modern world — on both sides of an arbitrary border.</p>
+
+        <div class="stat-row">
+          <div class="stat">
+            <span class="stat-num">6</span>
+            <span class="stat-label">Nations of the Confederacy</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">3</span>
+            <span class="stat-label">Mohawk Clans</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">∞</span>
+            <span class="stat-label">Years of Sovereignty</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Wampum pattern band ── -->
+<div class="wampum-divider">
+  <svg viewBox="0 0 1200 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <defs>
+      <pattern id="wp2" x="0" y="0" width="80" height="50" patternUnits="userSpaceOnUse">
+        <rect x="0"  y="0"  width="20" height="25" fill="#6B4C8A"/>
+        <rect x="20" y="0"  width="20" height="25" fill="#E8DFF5"/>
+        <rect x="40" y="0"  width="20" height="25" fill="#C4622D"/>
+        <rect x="60" y="0"  width="20" height="25" fill="#F2C84B"/>
+        <rect x="0"  y="25" width="20" height="25" fill="#F2C84B"/>
+        <rect x="20" y="25" width="20" height="25" fill="#C4622D"/>
+        <rect x="40" y="25" width="20" height="25" fill="#E8DFF5"/>
+        <rect x="60" y="25" width="20" height="25" fill="#6B4C8A"/>
+      </pattern>
+    </defs>
+    <rect width="1200" height="50" fill="url(#wp2)"/>
+  </svg>
+</div>
+
+<!-- ══════════════════════════════════════
+     NATIONS / CONFEDERACY
+══════════════════════════════════════ -->
+<section id="nations">
+  <div class="section-inner">
+    <div class="nations-intro">
+      <div class="reveal">
+        <div class="section-eyebrow">
+          <span class="section-label">The Confederacy</span>
+        </div>
+        <h2 class="section-title">Haudenosaunee<br>Six Nations</h2>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <p class="section-body" style="margin-top:1rem">The Haudenosaunee Confederacy — the Great League of Peace — is one of the world's oldest democratic federations, predating the United States Constitution by centuries. The Great Law of Peace (Gayanashagowa) governs all six nations, establishing principles of justice, balance, and consensus that influenced modern democracy. We carry our own passports. We are sovereign.</p>
+      </div>
+    </div>
+
+    <div class="nations-grid">
+
+      <div class="nation-card featured reveal reveal-delay-1">
+        <svg class="nation-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="20" cy="22" rx="14" ry="12" fill="#5C2206" stroke="#F2C84B" stroke-width="1"/>
+          <polygon points="20,14 26,17 26,22 20,25 14,22 14,17" fill="none" stroke="#F2C84B" stroke-width="0.8"/>
+          <ellipse cx="20" cy="11" rx="6" ry="5" fill="#C4622D" stroke="#F2C84B" stroke-width="0.8"/>
+          <path d="M20,6 C20,6 19,2 19.5,0 C19.8,-1 20.2,-1 20.5,0 C21,2 20,6 20,6Z" fill="#C4622D"/>
+        </svg>
+        <div class="nation-name">Kanien'kehá:ka</div>
+        <div class="nation-mohawk">Mohawk Nation</div>
+        <p class="nation-desc">Keepers of the Eastern Door. The first nation of the Confederacy, known for their flint and their fierce defense of the Great Law. Turtle, Wolf, and Bear clans.</p>
+        <span class="nation-badge">Our Nation</span>
+      </div>
+
+      <div class="nation-card reveal reveal-delay-2">
+        <svg class="nation-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="20,5 35,14 35,28 20,37 5,28 5,14" fill="none" stroke="#E8931A" stroke-width="1.2"/>
+          <polygon points="20,12 28,17 28,25 20,30 12,25 12,17" fill="rgba(232,147,26,0.2)" stroke="#E8931A" stroke-width="0.8"/>
+          <circle cx="20" cy="20" r="4" fill="#E8931A" opacity="0.7"/>
+        </svg>
+        <div class="nation-name">Onayotekaono</div>
+        <div class="nation-mohawk">Oneida Nation</div>
+        <p class="nation-desc">People of the Standing Stone. Allied with the Americans in the Revolution, creating one of the most complex chapters in Haudenosaunee history.</p>
+      </div>
+
+      <div class="nation-card reveal reveal-delay-3">
+        <svg class="nation-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="16" fill="none" stroke="#F2C84B" stroke-width="1"/>
+          <circle cx="20" cy="20" r="10" fill="rgba(242,200,75,0.15)" stroke="#F2C84B" stroke-width="0.8"/>
+          <circle cx="20" cy="20" r="4" fill="#F2C84B" opacity="0.6"/>
+        </svg>
+        <div class="nation-name">Onöndowa'ga:'</div>
+        <div class="nation-mohawk">Seneca Nation</div>
+        <p class="nation-desc">Keepers of the Western Door. The largest of the six nations, known as the Great Hill People. Guardians of the western boundary of Haudenosaunee territory.</p>
+      </div>
+
+      <div class="nation-card reveal reveal-delay-1">
+        <svg class="nation-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="5" x2="20" y2="35" stroke="#2A7A6E" stroke-width="1.5"/>
+          <line x1="5" y1="20" x2="35" y2="20" stroke="#2A7A6E" stroke-width="1.5"/>
+          <line x1="9" y1="9" x2="31" y2="31" stroke="#2A7A6E" stroke-width="0.8" opacity="0.5"/>
+          <line x1="31" y1="9" x2="9" y2="31" stroke="#2A7A6E" stroke-width="0.8" opacity="0.5"/>
+          <circle cx="20" cy="20" r="5" fill="rgba(42,122,110,0.4)" stroke="#2A7A6E" stroke-width="1"/>
+        </svg>
+        <div class="nation-name">Gayogo̱hó꞉nǫ'</div>
+        <div class="nation-mohawk">Cayuga Nation</div>
+        <p class="nation-desc">People of the Great Swamp. One of the smaller nations, known for their diplomatic wisdom and their connection to the waterways of their territory.</p>
+      </div>
+
+      <div class="nation-card reveal reveal-delay-2">
+        <svg class="nation-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="20,5 35,28 5,28" fill="none" stroke="#C4622D" stroke-width="1.2"/>
+          <polygon points="20,13 30,28 10,28" fill="rgba(196,98,45,0.2)" stroke="#C4622D" stroke-width="0.8"/>
+          <circle cx="20" cy="22" r="3" fill="#C4622D" opacity="0.7"/>
+        </svg>
+        <div class="nation-name">Onötowáka</div>
+        <div class="nation-mohawk">Onondaga Nation</div>
+        <p class="nation-desc">Keepers of the Central Fire. The capital nation of the Confederacy — all Grand Council fires are lit in Onondaga territory. Holders of the Two Row Wampum traditions.</p>
+      </div>
+
+      <div class="nation-card reveal reveal-delay-3">
+        <svg class="nation-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="8" width="24" height="24" fill="none" stroke="#6B4C8A" stroke-width="1"/>
+          <rect x="14" y="14" width="12" height="12" fill="rgba(107,76,138,0.2)" stroke="#6B4C8A" stroke-width="0.8"/>
+          <circle cx="20" cy="20" r="3" fill="#6B4C8A" opacity="0.7"/>
+          <circle cx="8"  cy="8"  r="2" fill="#E8DFF5"/>
+          <circle cx="32" cy="8"  r="2" fill="#E8DFF5"/>
+          <circle cx="8"  cy="32" r="2" fill="#E8DFF5"/>
+          <circle cx="32" cy="32" r="2" fill="#E8DFF5"/>
+        </svg>
+        <div class="nation-name">Ska-Rù-Rę'</div>
+        <div class="nation-mohawk">Tuscarora Nation</div>
+        <p class="nation-desc">The Shirt-Wearing People, admitted to the Confederacy in the early 18th century as the Sixth Nation after being displaced from their North Carolina homeland.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CULTURE
+══════════════════════════════════════ -->
+<section id="culture">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">
+      <span class="section-label">Living Culture</span>
+    </div>
+    <h2 class="section-title reveal">What We Carry Forward</h2>
+    <p class="section-body reveal reveal-delay-1" style="margin-bottom:3rem">Mohawk culture is not a relic — it is alive, practiced, spoken, and passed down. These are some of the pillars of Kanien'kehá:ka identity that we carry forward into every generation.</p>
+
+    <div class="culture-grid">
+
+      <div class="culture-item reveal reveal-delay-1">
+        <span class="culture-num">01</span>
+        <div class="culture-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18,4 C18,4 10,10 10,20 C10,28 14,32 18,32 C22,32 26,28 26,20 C26,10 18,4 18,4Z" fill="none" stroke="#F2C84B" stroke-width="1.5"/>
+            <path d="M18,10 C18,10 13,15 13,22 C13,27 15.5,30 18,30" fill="none" stroke="#E8931A" stroke-width="1" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="culture-title">Kanien'kéha — The Language</div>
+        <p class="culture-text">The Mohawk language is a living connection to thousands of years of knowledge. Language revitalization efforts at Kahnawà:ke and other communities are bringing Kanien'kéha back into daily life, schools, and homes. Language is sovereignty.</p>
+      </div>
+
+      <div class="culture-item reveal reveal-delay-2">
+        <span class="culture-num">02</span>
+        <div class="culture-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="12" fill="none" stroke="#E8931A" stroke-width="1.5"/>
+            <circle cx="18" cy="18" r="6" fill="none" stroke="#F2C84B" stroke-width="1"/>
+            <line x1="18" y1="6"  x2="18" y2="30" stroke="#F2C84B" stroke-width="0.8" opacity="0.5"/>
+            <line x1="6"  y1="18" x2="30" y2="18" stroke="#F2C84B" stroke-width="0.8" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="culture-title">Clan System & Governance</div>
+        <p class="culture-text">The Turtle, Wolf, and Bear clans form the social and political backbone of Mohawk society. Clan mothers hold the power to appoint and remove chiefs. This matrilineal system predates any modern democracy and continues to guide our self-governance today.</p>
+      </div>
+
+      <div class="culture-item reveal reveal-delay-1">
+        <span class="culture-num">03</span>
+        <div class="culture-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="8" height="8" fill="#6B4C8A"/>
+            <rect x="14" y="4" width="8" height="8" fill="#E8DFF5"/>
+            <rect x="24" y="4" width="8" height="8" fill="#6B4C8A"/>
+            <rect x="4" y="14" width="8" height="8" fill="#C4622D"/>
+            <rect x="14" y="14" width="8" height="8" fill="#F2C84B"/>
+            <rect x="24" y="14" width="8" height="8" fill="#C4622D"/>
+            <rect x="4" y="24" width="8" height="8" fill="#E8DFF5"/>
+            <rect x="14" y="24" width="8" height="8" fill="#6B4C8A"/>
+            <rect x="24" y="24" width="8" height="8" fill="#E8DFF5"/>
+          </svg>
+        </div>
+        <div class="culture-title">Wampum & Beadwork</div>
+        <p class="culture-text">Wampum belts — made from white and purple wampum beads — are not decoration. They are treaties, records, and sacred documents. The Two Row Wampum Belt represents peaceful coexistence: two nations traveling together on the same river, neither interfering with the other.</p>
+      </div>
+
+      <div class="culture-item reveal reveal-delay-2">
+        <span class="culture-num">04</span>
+        <div class="culture-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18,8 L18,8 C18,8 13,12 13,18 C13,24 18,28 18,28 C18,28 23,24 23,18 C23,12 18,8 18,8Z" fill="none" stroke="#2A7A6E" stroke-width="1.5"/>
+            <line x1="18" y1="8" x2="18" y2="3" stroke="#2A7A6E" stroke-width="1.5"/>
+            <line x1="14" y1="10" x2="10" y2="5" stroke="#C4622D" stroke-width="1.2"/>
+            <line x1="22" y1="10" x2="26" y2="5" stroke="#C4622D" stroke-width="1.2"/>
+            <circle cx="18" cy="3" r="2" fill="#2A7A6E"/>
+            <circle cx="10" cy="5" r="1.5" fill="#C4622D"/>
+            <circle cx="26" cy="5" r="1.5" fill="#C4622D"/>
+          </svg>
+        </div>
+        <div class="culture-title">Ironwork & Sovereignty in Action</div>
+        <p class="culture-text">Mohawks from Kahnawà:ke became legendary high-steel ironworkers, building skylines across New York and beyond — a tradition dating to the 1880s Lachine Bridge construction. This is Mohawk ingenuity and fearlessness made visible in the modern world.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     BRAND KIT
+══════════════════════════════════════ -->
+<section id="brand">
+  <div class="section-inner">
+    <div class="section-eyebrow reveal">
+      <span class="section-label">Brand Assets</span>
+    </div>
+    <h2 class="section-title reveal">Carry the Culture Forward</h2>
+    <p class="section-body reveal reveal-delay-1">These visual assets were designed to honor Kanien'kehá:ka identity — rooted in Haudenosaunee symbolism, wampum traditions, warrior heritage, and Turtle Clan meaning. Use them to represent, educate, and inspire.</p>
+
+    <div class="brand-showcase">
+
+      <div class="brand-card reveal reveal-delay-1">
+        <div class="brand-preview">
+          <svg viewBox="0 0 200 200" width="160" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#E8931A" stroke-width="1.5" opacity="0.5"/>
+            <g>
+              <circle cx="100" cy="5"  r="3.5" fill="#6B4C8A"/>
+              <circle cx="153" cy="20" r="3.5" fill="#E8DFF5"/>
+              <circle cx="190" cy="57" r="3.5" fill="#6B4C8A"/>
+              <circle cx="198" cy="100" r="3.5" fill="#E8DFF5"/>
+              <circle cx="190" cy="143" r="3.5" fill="#6B4C8A"/>
+              <circle cx="153" cy="180" r="3.5" fill="#E8DFF5"/>
+              <circle cx="100" cy="195" r="3.5" fill="#6B4C8A"/>
+              <circle cx="47"  cy="180" r="3.5" fill="#E8DFF5"/>
+              <circle cx="10"  cy="143" r="3.5" fill="#6B4C8A"/>
+              <circle cx="2"   cy="100" r="3.5" fill="#E8DFF5"/>
+              <circle cx="10"  cy="57"  r="3.5" fill="#6B4C8A"/>
+              <circle cx="47"  cy="20"  r="3.5" fill="#E8DFF5"/>
+            </g>
+            <ellipse cx="100" cy="100" rx="52" ry="45" fill="#5C2206" stroke="#F2C84B" stroke-width="1.2"/>
+            <polygon points="100,78 115,87 115,105 100,114 85,105 85,87" fill="none" stroke="#F2C84B" stroke-width="1"/>
+            <ellipse cx="100" cy="62" rx="15" ry="13" fill="#C4622D" stroke="#F2C84B" stroke-width="1"/>
+            <path d="M100,49 C100,49 97,38 98,28 C98.5,23 101.5,23 102,28 C103,38 100,49 100,49Z" fill="#C4622D"/>
+            <path d="M94,51 C94,51 89,42 88,32 C87.5,27 89.5,27 91,32 C92.5,41 94,51 94,51Z" fill="#8B3A0F"/>
+            <path d="M106,51 C106,51 111,42 112,32 C112.5,27 110.5,27 109,32 C107.5,41 106,51 106,51Z" fill="#8B3A0F"/>
+            <path d="M88,53 C88,53 80,44 78,33 C77,27 80,26 82,32 C84,42 88,53 88,53Z" fill="#2A7A6E"/>
+            <path d="M112,53 C112,53 120,44 122,33 C123,27 120,26 118,32 C116,42 112,53 112,53Z" fill="#2A7A6E"/>
+            <ellipse cx="60" cy="94" rx="12" ry="7" fill="#C4622D" stroke="#F2C84B" stroke-width="0.8" transform="rotate(-30 60 94)"/>
+            <ellipse cx="140" cy="94" rx="12" ry="7" fill="#C4622D" stroke="#F2C84B" stroke-width="0.8" transform="rotate(30 140 94)"/>
+            <ellipse cx="63" cy="118" rx="11" ry="6" fill="#C4622D" stroke="#F2C84B" stroke-width="0.8" transform="rotate(25 63 118)"/>
+            <ellipse cx="137" cy="118" rx="11" ry="6" fill="#C4622D" stroke="#F2C84B" stroke-width="0.8" transform="rotate(-25 137 118)"/>
+            <text x="100" y="173" text-anchor="middle" font-family="Georgia,serif" font-size="7" letter-spacing="3" fill="#F2C84B">TURTLE CLAN</text>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <div class="brand-name">Primary Logo</div>
+          <p class="brand-desc">Full seal with wampum ring, warrior feathers, and wordmark</p>
+          <a href="01-primary-logo.svg" download class="download-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download SVG
+          </a>
+        </div>
+      </div>
+
+      <div class="brand-card reveal reveal-delay-2">
+        <div class="brand-preview" style="background:#F5EDD6">
+          <svg viewBox="0 0 200 200" width="160" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="100" cy="100" rx="52" ry="45" fill="#C4622D" stroke="#8B3A0F" stroke-width="1.5"/>
+            <polygon points="100,78 115,87 115,105 100,114 85,105 85,87" fill="none" stroke="#F5EDD6" stroke-width="1.2"/>
+            <ellipse cx="100" cy="62" rx="15" ry="13" fill="#8B3A0F" stroke="#3d2010" stroke-width="1"/>
+            <path d="M100,49 C100,49 97,38 98,28 C98.5,23 101.5,23 102,28 C103,38 100,49 100,49Z" fill="#3d2010"/>
+            <path d="M94,51 C94,51 89,42 88,32 C87.5,27 89.5,27 91,32 C92.5,41 94,51 94,51Z" fill="#5C2206"/>
+            <path d="M106,51 C106,51 111,42 112,32 C112.5,27 110.5,27 109,32 C107.5,41 106,51 106,51Z" fill="#5C2206"/>
+            <path d="M88,53 C88,53 80,44 78,33 C77,27 80,26 82,32 C84,42 88,53 88,53Z" fill="#2A7A6E"/>
+            <path d="M112,53 C112,53 120,44 122,33 C123,27 120,26 118,32 C116,42 112,53 112,53Z" fill="#2A7A6E"/>
+            <ellipse cx="60" cy="94" rx="12" ry="7" fill="#8B3A0F" stroke="#3d2010" stroke-width="0.8" transform="rotate(-30 60 94)"/>
+            <ellipse cx="140" cy="94" rx="12" ry="7" fill="#8B3A0F" stroke="#3d2010" stroke-width="0.8" transform="rotate(30 140 94)"/>
+            <ellipse cx="63" cy="118" rx="11" ry="6" fill="#8B3A0F" stroke="#3d2010" stroke-width="0.8" transform="rotate(25 63 118)"/>
+            <ellipse cx="137" cy="118" rx="11" ry="6" fill="#8B3A0F" stroke="#3d2010" stroke-width="0.8" transform="rotate(-25 137 118)"/>
+            <text x="100" y="168" text-anchor="middle" font-family="Georgia,serif" font-size="7" letter-spacing="3" fill="#3d2010">TURTLE CLAN</text>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <div class="brand-name">Logo · Light Version</div>
+          <p class="brand-desc">Reversed colorway for light backgrounds and print</p>
+          <a href="03-logo-light.svg" download class="download-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download SVG
+          </a>
+        </div>
+      </div>
+
+      <div class="brand-card reveal reveal-delay-1" style="grid-column: 1 / -1">
+        <div class="brand-preview" style="overflow:hidden; padding:0; min-height:120px">
+          <svg viewBox="0 0 800 80" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block">
+            <defs>
+              <pattern id="wpr" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="20" height="20" fill="#6B4C8A"/>
+                <rect x="20" y="0" width="20" height="20" fill="#E8DFF5"/>
+                <rect x="40" y="0" width="20" height="20" fill="#C4622D"/>
+                <rect x="60" y="0" width="20" height="20" fill="#F2C84B"/>
+                <rect x="0" y="20" width="20" height="20" fill="#F2C84B"/>
+                <rect x="20" y="20" width="20" height="20" fill="#C4622D"/>
+                <rect x="40" y="20" width="20" height="20" fill="#E8DFF5"/>
+                <rect x="60" y="20" width="20" height="20" fill="#6B4C8A"/>
+                <rect x="0" y="40" width="20" height="20" fill="#6B4C8A"/>
+                <rect x="20" y="40" width="20" height="20" fill="#E8DFF5"/>
+                <rect x="40" y="40" width="20" height="20" fill="#C4622D"/>
+                <rect x="60" y="40" width="20" height="20" fill="#F2C84B"/>
+                <rect x="0" y="60" width="20" height="20" fill="#F2C84B"/>
+                <rect x="20" y="60" width="20" height="20" fill="#C4622D"/>
+                <rect x="40" y="60" width="20" height="20" fill="#E8DFF5"/>
+                <rect x="60" y="60" width="20" height="20" fill="#6B4C8A"/>
+              </pattern>
+            </defs>
+            <rect width="800" height="80" fill="url(#wpr)"/>
+            <rect x="220" y="8" width="360" height="64" fill="#2d1a0a" opacity="0.92"/>
+            <text x="400" y="40" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="bold" letter-spacing="6" fill="#F2C84B">HAUDENOSAUNEE</text>
+            <text x="400" y="58" text-anchor="middle" font-family="Georgia,serif" font-size="7" letter-spacing="5" fill="#E8931A">SIX NATIONS CONFEDERACY</text>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <div class="brand-name">Wampum Pattern Banner</div>
+          <p class="brand-desc">Traditional-inspired beadwork geometric — fabric print, website header, apparel</p>
+          <a href="05-wampum-pattern-banner.svg" download class="download-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download SVG
+          </a>
+          <a href="mohawk-brand-kit.html" class="download-link" style="margin-left:0.5rem">View Full Kit →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CONNECT
+══════════════════════════════════════ -->
+<section id="connect">
+  <div class="section-inner">
+    <div class="connect-inner">
+      <div class="section-eyebrow reveal">
+        <span class="section-label">Connect</span>
+      </div>
+      <h2 class="section-title reveal">Reach Out</h2>
+      <p class="section-body reveal reveal-delay-1" style="margin:0 auto 1rem">Whether you want to collaborate, learn, share resources, or simply connect — reach out. Building bridges is part of the work.</p>
+
+      <form class="connect-form reveal reveal-delay-2" onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="Your name" required/>
+        <input type="email" placeholder="Your email" required/>
+        <textarea placeholder="Your message — what brings you here?"></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+
+      <div class="social-links reveal reveal-delay-3">
+        <a href="#" class="social-link" title="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="#" class="social-link" title="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" class="social-link" title="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58a2.78 2.78 0 001.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://github.com" class="social-link" title="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<div class="wampum-bar"></div>
+<footer>
+  <div class="footer-logo">ONKWEHONWE</div>
+  <p class="footer-tagline">Kanien'kehá:ka · Turtle Clan · Kahnawà:ke · Haudenosaunee Confederacy</p>
+  <ul class="footer-nav">
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#nations">Confederacy</a></li>
+    <li><a href="#culture">Culture</a></li>
+    <li><a href="#brand">Brand Kit</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+  <p class="footer-copy">Onkwehonwe · Original People of Turtle Island · Sovereign Since Time Immemorial</p>
+</footer>
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
+<script>
+// Mobile nav
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+// Smooth close on link click
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => observer.observe(el));
+
+// Nav active state on scroll
+const sections = document.querySelectorAll('section[id]');
+const navAs = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  navAs.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current
+      ? 'var(--gold)'
+      : '';
+  });
+});
+
+// Form submit
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.submit-btn');
+  btn.textContent = 'Message Sent ✓';
+  btn.style.background = 'linear-gradient(135deg, #2A7A6E, #1a5a50)';
+  setTimeout(() => {
+    btn.textContent = 'Send Message';
+    btn.style.background = '';
+    e.target.reset();
+  }, 3000);
+}
+</script>
+
+</body>
+</html>
