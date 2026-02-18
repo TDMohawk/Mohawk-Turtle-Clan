@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 300 300" width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="turtleGrad" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#F2C84B"/>
+      <stop offset="50%" stop-color="#C4622D"/>
+      <stop offset="100%" stop-color="#8B3A0F"/>
+    </radialGradient>
+    <radialGradient id="shellGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#E8931A"/>
+      <stop offset="100%" stop-color="#5C2206"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="300" height="300" fill="#1a0e05"/>
+
+  <!-- Outer geometric ring - wampum bead pattern -->
+  <circle cx="150" cy="150" r="145" fill="none" stroke="#F2C84B" stroke-width="1" opacity="0.4"/>
+  <circle cx="150" cy="150" r="138" fill="none" stroke="#E8931A" stroke-width="2" opacity="0.6"/>
+
+  <!-- Wampum beads around the ring -->
+  <g filter="url(#glow)">
+    <circle cx="150" cy="8" r="4" fill="#6B4C8A" opacity="0.9"/>
+    <circle cx="222" cy="28" r="4" fill="#E8DFF5" opacity="0.9"/>
+    <circle cx="278" cy="82" r="4" fill="#6B4C8A" opacity="0.9"/>
+    <circle cx="295" cy="150" r="4" fill="#E8DFF5" opacity="0.9"/>
+    <circle cx="278" cy="218" r="4" fill="#6B4C8A" opacity="0.9"/>
+    <circle cx="222" cy="272" r="4" fill="#E8DFF5" opacity="0.9"/>
+    <circle cx="150" cy="292" r="4" fill="#6B4C8A" opacity="0.9"/>
+    <circle cx="78" cy="272" r="4" fill="#E8DFF5" opacity="0.9"/>
+    <circle cx="22" cy="218" r="4" fill="#6B4C8A" opacity="0.9"/>
+    <circle cx="5" cy="150" r="4" fill="#E8DFF5" opacity="0.9"/>
+    <circle cx="22" cy="82" r="4" fill="#6B4C8A" opacity="0.9"/>
+    <circle cx="78" cy="28" r="4" fill="#E8DFF5" opacity="0.9"/>
+  </g>
+
+  <!-- Four directions cross -->
+  <line x1="150" y1="20" x2="150" y2="60" stroke="#F2C84B" stroke-width="1.5" opacity="0.5"/>
+  <line x1="150" y1="240" x2="150" y2="280" stroke="#F2C84B" stroke-width="1.5" opacity="0.5"/>
+  <line x1="20" y1="150" x2="60" y2="150" stroke="#F2C84B" stroke-width="1.5" opacity="0.5"/>
+  <line x1="240" y1="150" x2="280" y2="150" stroke="#F2C84B" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Turtle shell -->
+  <ellipse cx="150" cy="148" rx="75" ry="65" fill="url(#shellGrad)" stroke="#F2C84B" stroke-width="1.5"/>
+  <!-- Shell hexagon pattern (13 segments = 13 moons) -->
+  <polygon points="150,118 170,130 170,154 150,166 130,154 130,130" fill="none" stroke="#F2C84B" stroke-width="1.2" opacity="0.8"/>
+  <polygon points="150,104 162,111 162,118 150,118 138,111" fill="none" stroke="#E8931A" stroke-width="1" opacity="0.7"/>
+  <polygon points="170,130 183,122 189,133 183,145 170,154 170,130" fill="none" stroke="#E8931A" stroke-width="1" opacity="0.7"/>
+  <polygon points="170,154 183,145 189,157 183,168 170,166" fill="none" stroke="#E8931A" stroke-width="1" opacity="0.7"/>
+  <polygon points="150,166 162,173 150,183 138,173 130,166" fill="none" stroke="#E8931A" stroke-width="1" opacity="0.7"/>
+  <polygon points="130,154 117,168 111,157 117,145 130,130 130,154" fill="none" stroke="#E8931A" stroke-width="1" opacity="0.7"/>
+  <polygon points="130,130 117,145 111,133 117,122 130,104 130,130" fill="none" stroke="#E8931A" stroke-width="1" opacity="0.7"/>
+
+  <!-- Turtle head -->
+  <ellipse cx="150" cy="90" rx="22" ry="18" fill="url(#turtleGrad)" stroke="#F2C84B" stroke-width="1.5"/>
+  <line x1="145" y1="82" x2="155" y2="82" stroke="#1a0e05" stroke-width="1.5"/>
+  <line x1="143" y1="87" x2="157" y2="87" stroke="#1a0e05" stroke-width="1"/>
+  <circle cx="143" cy="86" r="3" fill="#1a0e05"/>
+  <circle cx="157" cy="86" r="3" fill="#1a0e05"/>
+  <circle cx="144" cy="85" r="1" fill="#F2C84B"/>
+  <circle cx="158" cy="85" r="1" fill="#F2C84B"/>
+
+  <!-- Front legs -->
+  <ellipse cx="88" cy="138" rx="18" ry="10" fill="url(#turtleGrad)" stroke="#F2C84B" stroke-width="1.2" transform="rotate(-30 88 138)"/>
+  <ellipse cx="212" cy="138" rx="18" ry="10" fill="url(#turtleGrad)" stroke="#F2C84B" stroke-width="1.2" transform="rotate(30 212 138)"/>
+  <!-- Back legs -->
+  <ellipse cx="95" cy="180" rx="16" ry="9" fill="url(#turtleGrad)" stroke="#F2C84B" stroke-width="1.2" transform="rotate(25 95 180)"/>
+  <ellipse cx="205" cy="180" rx="16" ry="9" fill="url(#turtleGrad)" stroke="#F2C84B" stroke-width="1.2" transform="rotate(-25 205 180)"/>
+  <!-- Tail -->
+  <ellipse cx="150" cy="210" rx="8" ry="12" fill="url(#turtleGrad)" stroke="#F2C84B" stroke-width="1"/>
+
+  <!-- Warrior feathers -->
+  <path d="M150,72 C150,72 146,55 148,35 C149,25 151,25 152,35 C154,55 150,72 150,72Z" fill="#C4622D" stroke="#F2C84B" stroke-width="0.8"/>
+  <line x1="150" y1="72" x2="150" y2="35" stroke="#F2C84B" stroke-width="0.8" opacity="0.6"/>
+  <path d="M145,74 C145,74 138,60 137,42 C136,33 139,32 141,41 C143,59 145,74 145,74Z" fill="#8B3A0F" stroke="#E8931A" stroke-width="0.8"/>
+  <line x1="145" y1="74" x2="140" y2="42" stroke="#E8931A" stroke-width="0.8" opacity="0.5"/>
+  <path d="M155,74 C155,74 162,60 163,42 C164,33 161,32 159,41 C157,59 155,74 155,74Z" fill="#8B3A0F" stroke="#E8931A" stroke-width="0.8"/>
+  <line x1="155" y1="74" x2="160" y2="42" stroke="#E8931A" stroke-width="0.8" opacity="0.5"/>
+  <path d="M140,76 C140,76 130,65 127,50 C125,42 128,41 130,49 C133,63 140,76 140,76Z" fill="#2A7A6E" stroke="#F2C84B" stroke-width="0.8"/>
+  <path d="M160,76 C160,76 170,65 173,50 C175,42 172,41 170,49 C167,63 160,76 160,76Z" fill="#2A7A6E" stroke="#F2C84B" stroke-width="0.8"/>
+
+  <!-- Inner dashed ring -->
+  <circle cx="150" cy="150" r="98" fill="none" stroke="#E8931A" stroke-width="0.8" stroke-dasharray="4 8" opacity="0.4"/>
+
+  <!-- Wordmark -->
+  <text x="150" y="256" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-weight="bold" letter-spacing="5" fill="#F2C84B">ONKWEHONWE</text>
+  <text x="150" y="272" text-anchor="middle" font-family="Georgia, serif" font-size="7" letter-spacing="4" fill="#E8931A" opacity="0.8">KANIEN'KEHÁ:KA · TURTLE CLAN</text>
+  <text x="150" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="6" letter-spacing="3" fill="#F5EDD6" opacity="0.5">KAHNAWÀ:KE · HAUDENOSAUNEE</text>
+</svg>

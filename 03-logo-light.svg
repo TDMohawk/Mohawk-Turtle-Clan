@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 450" width="400" height="450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background cream/light -->
+  <rect width="400" height="450" fill="#F5EDD6"/>
+  <rect x="10" y="10" width="380" height="430" fill="none" stroke="#8B3A0F" stroke-width="1" opacity="0.3"/>
+  <!-- Corner ornaments -->
+  <path d="M10,10 L35,10 M10,10 L10,35" stroke="#8B3A0F" stroke-width="2" opacity="0.6"/>
+  <path d="M390,10 L365,10 M390,10 L390,35" stroke="#8B3A0F" stroke-width="2" opacity="0.6"/>
+  <path d="M10,440 L35,440 M10,440 L10,415" stroke="#8B3A0F" stroke-width="2" opacity="0.6"/>
+  <path d="M390,440 L365,440 M390,440 L390,415" stroke="#8B3A0F" stroke-width="2" opacity="0.6"/>
+
+  <!-- Shell -->
+  <ellipse cx="200" cy="195" rx="80" ry="70" fill="#C4622D" stroke="#8B3A0F" stroke-width="2"/>
+  <polygon points="200,161 222,174 222,200 200,213 178,200 178,174" fill="none" stroke="#F5EDD6" stroke-width="1.5" opacity="0.8"/>
+  <polygon points="200,147 214,154 214,161 200,161 186,154" fill="none" stroke="#F5EDD6" stroke-width="1" opacity="0.7"/>
+  <polygon points="222,174 237,165 244,177 237,190 222,200 222,174" fill="none" stroke="#F5EDD6" stroke-width="1" opacity="0.7"/>
+  <polygon points="222,200 237,190 244,202 237,214 222,213" fill="none" stroke="#F5EDD6" stroke-width="1" opacity="0.7"/>
+  <polygon points="200,213 214,221 200,231 186,221 178,213" fill="none" stroke="#F5EDD6" stroke-width="1" opacity="0.7"/>
+  <polygon points="178,200 163,214 157,202 163,190 178,174 178,200" fill="none" stroke="#F5EDD6" stroke-width="1" opacity="0.7"/>
+  <polygon points="178,174 163,190 157,177 163,165 178,147 178,174" fill="none" stroke="#F5EDD6" stroke-width="1" opacity="0.7"/>
+
+  <!-- Head -->
+  <ellipse cx="200" cy="130" rx="22" ry="18" fill="#8B3A0F" stroke="#3d2010" stroke-width="1.5"/>
+  <line x1="195" y1="122" x2="205" y2="122" stroke="#F5EDD6" stroke-width="1.5"/>
+  <circle cx="193" cy="127" r="3" fill="#F5EDD6"/>
+  <circle cx="207" cy="127" r="3" fill="#F5EDD6"/>
+  <circle cx="193" cy="127" r="1" fill="#8B3A0F"/>
+  <circle cx="207" cy="127" r="1" fill="#8B3A0F"/>
+
+  <!-- Legs -->
+  <ellipse cx="132" cy="182" rx="18" ry="10" fill="#8B3A0F" stroke="#3d2010" stroke-width="1.2" transform="rotate(-30 132 182)"/>
+  <ellipse cx="268" cy="182" rx="18" ry="10" fill="#8B3A0F" stroke="#3d2010" stroke-width="1.2" transform="rotate(30 268 182)"/>
+  <ellipse cx="140" cy="228" rx="16" ry="9" fill="#8B3A0F" stroke="#3d2010" stroke-width="1.2" transform="rotate(25 140 228)"/>
+  <ellipse cx="260" cy="228" rx="16" ry="9" fill="#8B3A0F" stroke="#3d2010" stroke-width="1.2" transform="rotate(-25 260 228)"/>
+  <ellipse cx="200" cy="262" rx="8" ry="12" fill="#8B3A0F" stroke="#3d2010" stroke-width="1"/>
+
+  <!-- Feathers (dark on light) -->
+  <path d="M200,112 C200,112 196,95 198,75 C199,65 201,65 202,75 C204,95 200,112 200,112Z" fill="#3d2010" stroke="#8B3A0F" stroke-width="0.8"/>
+  <path d="M195,114 C195,114 188,100 187,82 C186,73 189,72 191,81 C193,99 195,114 195,114Z" fill="#5C2206" stroke="#8B3A0F" stroke-width="0.8"/>
+  <path d="M205,114 C205,114 212,100 213,82 C214,73 211,72 209,81 C207,99 205,114 205,114Z" fill="#5C2206" stroke="#8B3A0F" stroke-width="0.8"/>
+  <path d="M190,116 C190,116 180,105 177,90 C175,82 178,81 180,89 C183,103 190,116 190,116Z" fill="#2A7A6E" stroke="#1a4a44" stroke-width="0.8"/>
+  <path d="M210,116 C210,116 220,105 223,90 C225,82 222,81 220,89 C217,103 210,116 210,116Z" fill="#2A7A6E" stroke="#1a4a44" stroke-width="0.8"/>
+
+  <!-- Wampum bead row -->
+  <g opacity="0.7">
+    <circle cx="60" cy="340" r="5" fill="#6B4C8A"/>
+    <circle cx="80" cy="340" r="5" fill="#3d2010"/>
+    <circle cx="100" cy="340" r="5" fill="#6B4C8A"/>
+    <circle cx="120" cy="340" r="5" fill="#3d2010"/>
+    <circle cx="140" cy="340" r="5" fill="#6B4C8A"/>
+    <circle cx="160" cy="340" r="5" fill="#3d2010"/>
+    <circle cx="180" cy="340" r="5" fill="#6B4C8A"/>
+    <circle cx="200" cy="340" r="5" fill="#3d2010"/>
+    <circle cx="220" cy="340" r="5" fill="#6B4C8A"/>
+    <circle cx="240" cy="340" r="5" fill="#3d2010"/>
+    <circle cx="260" cy="340" r="5" fill="#6B4C8A"/>
+    <circle cx="280" cy="340" r="5" fill="#3d2010"/>
+    <circle cx="300" cy="340" r="5" fill="#6B4C8A"/>
+    <circle cx="320" cy="340" r="5" fill="#3d2010"/>
+    <circle cx="340" cy="340" r="5" fill="#6B4C8A"/>
+  </g>
+
+  <!-- Wordmark (dark on light) -->
+  <text x="200" y="375" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="bold" letter-spacing="6" fill="#3d2010">ONKWEHONWE</text>
+  <line x1="60" y1="385" x2="340" y2="385" stroke="#8B3A0F" stroke-width="0.5" opacity="0.4"/>
+  <text x="200" y="400" text-anchor="middle" font-family="Georgia, serif" font-size="9" letter-spacing="5" fill="#8B3A0F">TURTLE CLAN · KAHNAWÀ:KE</text>
+  <text x="200" y="418" text-anchor="middle" font-family="Georgia, serif" font-size="7" letter-spacing="4" fill="#3d2010" opacity="0.5">KANIEN'KEHÁ:KA · HAUDENOSAUNEE</text>
+</svg>
